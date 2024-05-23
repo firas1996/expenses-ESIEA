@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./NewExpense.css";
 
-const NewExpense = () => {
+const NewExpense = ({ getData }) => {
   //   const [title, setTitle] = useState("");
   //   const [date, setDate] = useState("");
   //   const [price, setPrice] = useState("");
@@ -23,9 +23,10 @@ const NewExpense = () => {
       return { ...prevState, [name]: value };
     });
   };
+  const handelSubmit = (event) => {};
   return (
     <div className="new-expense">
-      <form>
+      <form onSubmit={handelSubmit}>
         <div className="new-expense__controls">
           <div className="new-expense__control">
             <label>Title</label>
@@ -66,7 +67,7 @@ const NewExpense = () => {
         </div>
         <div className="new-expense__actions">
           <button>Cancel</button>
-          <button>Add Expense</button>
+          <button type="submit">Add Expense</button>
         </div>
       </form>
     </div>

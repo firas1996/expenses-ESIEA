@@ -29,9 +29,12 @@ function App() {
       date: new Date(2024, 3, 3),
     },
   ];
+  const getData = (data) => {
+    console.log(data);
+  };
   return (
     <div>
-      <NewExpense />
+      <NewExpense getData={getData} />
       <ExpensesContainer expensesData={expensesData} />
     </div>
   );
